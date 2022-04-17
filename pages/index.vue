@@ -18,6 +18,7 @@
         :all-answers="possibleAnswers"
         :can-guess="canGuess && !won"
         class="col-span-8 col-start-3"
+        :wrong-guess="wrongGuess"
         @guessed="handleGuess"
       />
     </div>
@@ -79,6 +80,7 @@ export default Vue.extend({
       showDirections: false,
       winPopup: false,
       won: false,
+      wrongGuess: false,
     }
   },
   created() {
@@ -99,6 +101,11 @@ export default Vue.extend({
       if (this.selectedAnswer.name.toLowerCase() === guess.toLowerCase()) {
         this.won = true
         this.winPopup = true
+      } else {
+        this.wrongGuess = true
+        setTimeout(() => {
+          this.wrongGuess = false
+        }, 3000)
       }
     },
     handleReveal(revealLocation: number) {

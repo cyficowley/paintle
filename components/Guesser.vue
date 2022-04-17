@@ -31,6 +31,23 @@
       @keyup.enter="checkEnter"
     />
     <button
+      v-if="wrongGuess"
+      class="
+        rounded-2xl
+        text-2xl
+        outline-none
+        ml-4
+        px-4
+        py-4
+        text-white
+        bg-redd
+      "
+      @click="guessed"
+    >
+      Incorrect
+    </button>
+    <button
+      v-else
       class="rounded-2xl text-2xl outline-none ml-4 px-4 py-4 text-white"
       :class="canSubmit ? 'hover:bg-bluey-dark bg-bluey' : 'bg-bluey-light'"
       @click="guessed"
@@ -50,6 +67,10 @@ export default {
       required: true,
     },
     canGuess: {
+      type: Boolean,
+      required: true,
+    },
+    wrongGuess: {
       type: Boolean,
       required: true,
     },
