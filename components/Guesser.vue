@@ -1,63 +1,96 @@
 <template>
-  <div class="flex flex-col justify-center items-center">
-    <div v-if="revealed.length == 17" class="my-4">
-      <p class="object-center">I Give Up</p>
+  <div class="relative bg-white sm:flex w-full">
+    <!-- <p>guess is: {{ guess }}</p> -->
+    <div class="absolute w-full top-0">
+      <Results
+        v-if="guess.length !== 0 && !canSubmit"
+        :results="filteredPaintings"
+        class="absolute w-full bottom-0 mb-2"
+        @selected="setGuess"
+      />
     </div>
-    <div class="relative bg-white flex w-full">
-      <!-- <p>guess is: {{ guess }}</p> -->
-      <div class="absolute w-full top-0">
-        <Results
-          v-if="guess.length !== 0 && !canSubmit"
-          :results="filteredPaintings"
-          class="absolute w-full bottom-0 mb-2"
-          @selected="setGuess"
-        />
-      </div>
-      <input
-        v-model="guess"
-        type="text"
-        :placeholder="
-          canGuess
-            ? 'Search for artist / painting'
-            : 'Please select a tile to reveal'
-        "
-        :disabled="!canGuess"
+    <input
+      v-model="guess"
+      type="text"
+      :placeholder="placeholderText"
+      :disabled="!canGuess"
+      class="
+        border-4 border-bluey
+        rounded-2xl
+        text-xl
+        sm:text-2xl
+        outline-none
+        w-full
+        sm:px-4
+        px-3
+        sm:py-3
+        py-3
+        flex-grow
+        text-gray-500
+        mb-2
+        sm:mb-0
+      "
+      @keyup.enter="checkEnter"
+    />
+    <button
+      v-if="wrongGuess"
+      class="
+        rounded-2xl
+        text-xl
+        sm:text-2xl
+        outline-none
+        sm:ml-4 sm:px-4
+        px-3
+        w-full
+        sm:w-auto sm:py-3
+        py-3
+        text-white
+        bg-redd
+      "
+      @click="canGuess ? guessed() : null"
+    >
+      Incorrect
+    </button>
+    <button
+      v-else
+      class="
+        text-xl
+        sm:text-2xl
+        outline-none
+        sm:ml-4 sm:px-4
+        px-3
+        sm:py-4
+        py-3
+        w-full
+        sm:w-auto
+        rounded-2xl
+        text-white
+      "
+      :class="canSubmit ? 'hover:bg-bluey-dark bg-bluey' : 'bg-bluey-light'"
+      @click="canGuess ? guessed() : null"
+    >
+      Submit
+    </button>
+    <div v-if="revealed.length == 17" class="">
+      <button
         class="
-          border-4 border-bluey
+          mt-2
+          sm:mt-0
           rounded-2xl
-          text-2xl
+          text-xl
+          sm:text-2xl
           outline-none
           w-full
-          px-4
+          sm:ml-4 sm:px-4
+          px-3
+          sm:py-3
           py-3
-          flex-grow
-          text-gray-500
-        "
-        @keyup.enter="checkEnter"
-      />
-      <button
-        v-if="wrongGuess"
-        class="
-          rounded-2xl
-          text-2xl
-          outline-none
-          ml-4
-          px-4
-          py-4
           text-white
           bg-redd
         "
-        @click="guessed"
+        @click="$emit('loser')"
       >
-        Incorrect
-      </button>
-      <button
-        v-else
-        class="rounded-2xl text-2xl outline-none ml-4 px-4 py-4 text-white"
-        :class="canSubmit ? 'hover:bg-bluey-dark bg-bluey' : 'bg-bluey-light'"
-        @click="guessed"
-      >
-        Submit
+        Idk
       </button>
     </div>
   </div>
@@ -77,6 +110,14 @@ export default {
       required: true,
     },
     wrongGuess: {
+      type: Boolean,
+      required: true,
+    },
+    won: {
+      type: Boolean,
+      required: true,
+    },
+    lost: {
       type: Boolean,
       required: true,
     },
@@ -108,6 +149,18 @@ export default {
           return painting.name.toLowerCase() === this.guess.toLowerCase()
         })
       )
+    },
+    placeholderText() {
+      if (this.won) {
+        return 'You won!'
+      }
+      if (this.lost) {
+        return 'You lost :('
+      }
+      if (this.canGuess) {
+        return 'Search for artist / painting'
+      }
+      return 'Please select a tile to reveal'
     },
   },
   methods: {

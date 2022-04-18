@@ -4,14 +4,14 @@
       <p
         v-for="result in results.slice(0, 6)"
         :key="result.name"
-        class="text-xl text-gray-500 hover:bg-limey"
+        class="text-lg sm:text-xl text-gray-500 hover:bg-limey"
         @click="emitValue(result)"
       >
         <span class="font-bold">{{ result.name }}</span> - {{ result.artist }}
       </p>
     </div>
     <div v-else>
-      <p class="text-xl text-gray-500">No results found</p>
+      <p class="text-lg sm:text-xl text-gray-500">No results found</p>
     </div>
   </div>
 </template>

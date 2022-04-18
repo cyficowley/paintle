@@ -1,9 +1,9 @@
 <template>
   <div class="mx-auto bg-white">
-    <div class="text-5xl text-gray-500 mx-auto pb-4">
+    <div class="text-2xl sm:text-5xl text-gray-500 mx-auto pb-4">
       <p>Quite the Aesthete!</p>
     </div>
-    <div class="text-2xl text-gray-400">
+    <div class="text-lg sm:text-2xl text-gray-400">
       <p>
         You successfully guessed today's Paintle with
         {{ guesses.length - 1 < 3 ? 'only' : '' }}
@@ -17,7 +17,8 @@
       class="
         mt-4
         px-4
-        text-2xl
+        text-lg
+        sm:text-2xl
         py-2
         border border-transparent
         rounded-md

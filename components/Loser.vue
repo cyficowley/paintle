@@ -1,10 +1,16 @@
 <template>
   <div class="mx-auto bg-white">
-    <div class="text-5xl text-gray-500 mx-auto pb-4">
+    <div class="text-2xl sm:text-5xl text-gray-500 mx-auto pb-4">
       <p>Aw Shucks. Better Luck Next Time?</p>
     </div>
-    <div class="text-2xl text-gray-400">
+    <div class="text-lg sm:text-2xl text-gray-400">
       <p>You unfortunately were unable to guess the correct answer :(</p>
+      <br />
+      <p>The correct answer was:</p>
+      <p>
+        <span class="font-bold">{{ answer.name }} - {{ answer.artist }}</span
+        >.
+      </p>
       <br />
       <p>Time until next Paintle: {{ secTillMidnightString }}</p>
     </div>
@@ -12,7 +18,8 @@
       class="
         mt-4
         px-4
-        text-2xl
+        text-lg
+        sm:text-2xl
         py-2
         border border-transparent
         rounded-md
@@ -30,7 +37,12 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    answer: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       secTillMidnight: 0,
@@ -70,8 +82,15 @@ export default {
   },
   methods: {
     copyResults() {
-      let text = 'Paintle.art [date]\n'
-      text += 'Revealed x / 16 tiles\n\n'
+      const options = {
+        year: '2-digit',
+        month: 'numeric',
+        day: 'numeric',
+      }
+      const now = new Date()
+      const dateString = now.toLocaleDateString('en-US', options)
+      let text = `Paintle.art ${dateString}\n`
+      text += 'Revealed X / 16 tiles\n\n'
       const revealedSquare = '🟦'
 
       for (let x = 0; x < 16; x++) {

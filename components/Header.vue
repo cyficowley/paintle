@@ -7,28 +7,32 @@
           justify-between
           items-center
           border-b-2 border-gray-100
-          py-6
+          sm:py-6
+          py-3
           md:justify-start md:space-x-10
         "
       >
         <div class="flex justify-start lg:w-0 lg:flex-1">
-          <img class="h-10 w-auto" src="/brush.svg" alt="" />
+          <img class="h-8 sm:h-10 w-auto" src="/brush.svg" alt="" />
         </div>
-        <div class="md:flex space-x-10">
-          <h1 class="text-5xl text-gray-500">Paintle</h1>
+        <div class="md:flex space-x-10 px-2 sm:px-0">
+          <h1 class="text-2xl sm:text-5xl text-gray-500">Paintle</h1>
         </div>
+        <div class="sm:flex-grow-0 flex-grow"></div>
         <div class="md:flex items-center justify-end md:flex-1 lg:w-0">
           <button
-            v-if="won"
+            v-if="won || lost"
             class="
-              ml-8
+              sm:ml-8
               whitespace-nowrap
               inline-flex
-              text-2xl
+              sm:text-2xl
+              text-md
               items-center
               justify-center
-              px-4
-              py-2
+              sm:px-4 sm:py-2
+              py-1
+              px-2
               border border-transparent
               rounded-md
               shadow-sm
@@ -37,20 +41,23 @@
               bg-limey-dark
               hover:bg-limey
             "
-            @click="$emit('winner')"
+            @click="$emit(won ? 'winner' : 'loser')"
           >
             Results
           </button>
+
           <button
             class="
-              ml-8
+              sm:ml-8
               whitespace-nowrap
               inline-flex
-              text-2xl
+              sm:text-2xl
+              text-md
               items-center
               justify-center
-              px-4
-              py-2
+              sm:px-4 sm:py-2
+              py-1
+              px-2
               border border-transparent
               rounded-md
               shadow-sm
@@ -73,6 +80,10 @@
 export default {
   props: {
     won: {
+      type: Boolean,
+      required: true,
+    },
+    lost: {
       type: Boolean,
       required: true,
     },

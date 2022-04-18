@@ -3,8 +3,10 @@
     <Header
       class="mb-4"
       :won="won"
+      :lost="lost"
       @directions="showDirections = true"
       @winner="winPopup = true"
+      @loser="losePopup = true"
     />
     <div class="container mx-auto flex-grow min-h-0">
       <Painting
@@ -13,14 +15,17 @@
         @revealed="handleReveal"
       />
     </div>
-    <div class="container mx-auto grid grid-cols-12 gap-4 py-4">
+    <div class="container mx-auto grid grid-cols-12 px-2 gap-4 py-2 sm:py-4">
       <Guesser
         :all-answers="possibleAnswers"
         :can-guess="canGuess && !won"
         :revealed="revealed"
-        class="col-span-8 col-start-3"
+        class="col-span-12 sm:col-span-8 sm:col-start-3"
         :wrong-guess="wrongGuess"
+        :won="won"
+        :lost="lost"
         @guessed="handleGuess"
+        @loser="handleLoser"
       />
     </div>
     <Popup :visible="showDirections" @close="showDirections = false">
@@ -30,7 +35,7 @@
       <Winner :guesses="revealed" />
     </Popup>
     <Popup :visible="losePopup" @close="losePopup = false">
-      <Loser :guesses="revealed" />
+      <Loser :guesses="revealed" :answer="selectedAnswer" />
     </Popup>
   </div>
 </template>
@@ -85,6 +90,7 @@ export default Vue.extend({
       winPopup: false,
       losePopup: false,
       won: false,
+      lost: false,
       wrongGuess: false,
     }
   },
@@ -121,6 +127,8 @@ export default Vue.extend({
     },
     handleLoser() {
       this.losePopup = true
+      this.canGuess = false
+      this.lost = true
     },
   },
 })
