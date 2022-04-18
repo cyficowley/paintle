@@ -91,7 +91,7 @@ export default {
       }
       const now = new Date()
       const dateString = now.toLocaleDateString('en-US', options)
-      let text = `Paintle.art ${dateString}\n`
+      let text = `www.paintle.art ${dateString}\n`
       text += 'Revealed X / 16 tiles\n\n'
       const revealedSquare = '🟦'
 
