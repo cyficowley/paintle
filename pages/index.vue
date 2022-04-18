@@ -12,6 +12,7 @@
       <Painting
         :painting="selectedAnswer"
         :changeable="!won"
+        :reveal="won || lost"
         @revealed="handleReveal"
       />
     </div>

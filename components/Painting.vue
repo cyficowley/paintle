@@ -15,6 +15,7 @@
         :painting-piece="imagePiece"
         :color="colors[index % colors.length]"
         :changeable="changeable"
+        :reveal="reveal"
         @revealed="handleReveal"
       />
     </div>
@@ -33,6 +34,10 @@ export default {
       required: true,
     },
     changeable: {
+      type: Boolean,
+      required: true,
+    },
+    reveal: {
       type: Boolean,
       required: true,
     },

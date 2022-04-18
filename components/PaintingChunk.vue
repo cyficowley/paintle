@@ -11,7 +11,7 @@
     ]"
     @click="changeable ? flip() : null"
   >
-    <img v-if="revealed" :src="paintingPiece.src" />
+    <img v-if="revealed || reveal" :src="paintingPiece.src" />
   </div>
 </template>
 
@@ -28,6 +28,10 @@ export default {
       required: true,
     },
     changeable: {
+      type: Boolean,
+      required: true,
+    },
+    reveal: {
       type: Boolean,
       required: true,
     },
