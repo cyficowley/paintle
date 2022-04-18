@@ -17,6 +17,7 @@
       <Guesser
         :all-answers="possibleAnswers"
         :can-guess="canGuess && !won"
+        :revealed="revealed"
         class="col-span-8 col-start-3"
         :wrong-guess="wrongGuess"
         @guessed="handleGuess"
@@ -27,6 +28,9 @@
     </Popup>
     <Popup :visible="winPopup" @close="winPopup = false">
       <Winner :guesses="revealed" />
+    </Popup>
+    <Popup :visible="losePopup" @close="losePopup = false">
+      <Loser :guesses="revealed" />
     </Popup>
   </div>
 </template>
@@ -79,6 +83,7 @@ export default Vue.extend({
       revealed: [-1],
       showDirections: false,
       winPopup: false,
+      losePopup: false,
       won: false,
       wrongGuess: false,
     }
@@ -111,6 +116,9 @@ export default Vue.extend({
     handleReveal(revealLocation: number) {
       this.revealed.push(revealLocation)
       this.canGuess = true
+    },
+    handleLoser() {
+      this.losePopup = true
     },
   },
 })

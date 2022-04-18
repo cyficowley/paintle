@@ -1,59 +1,65 @@
 <template>
-  <div class="relative bg-white flex">
-    <!-- <p>guess is: {{ guess }}</p> -->
-    <div class="absolute w-full top-0">
-      <Results
-        v-if="guess.length !== 0 && !canSubmit"
-        :results="filteredPaintings"
-        class="absolute w-full bottom-0 mb-2"
-        @selected="setGuess"
-      />
+  <div class="flex flex-col justify-center items-center">
+    <div class="my-4">
+      <p class="object-center">I Give Up {{ revealed.length }}</p>
     </div>
-    <input
-      v-model="guess"
-      type="text"
-      :placeholder="
-        canGuess
-          ? 'Search for artist / painting'
-          : 'Please select a tile to reveal'
-      "
-      :disabled="!canGuess"
-      class="
-        border-4 border-bluey
-        rounded-2xl
-        text-2xl
-        outline-none
-        w-full
-        px-4
-        py-3
-        text-gray-500
-      "
-      @keyup.enter="checkEnter"
-    />
-    <button
-      v-if="wrongGuess"
-      class="
-        rounded-2xl
-        text-2xl
-        outline-none
-        ml-4
-        px-4
-        py-4
-        text-white
-        bg-redd
-      "
-      @click="guessed"
-    >
-      Incorrect
-    </button>
-    <button
-      v-else
-      class="rounded-2xl text-2xl outline-none ml-4 px-4 py-4 text-white"
-      :class="canSubmit ? 'hover:bg-bluey-dark bg-bluey' : 'bg-bluey-light'"
-      @click="guessed"
-    >
-      Submit
-    </button>
+    <div class="relative bg-white flex w-full">
+      <!-- <p>guess is: {{ guess }}</p> -->
+      <div class="absolute w-full top-0">
+        <Results
+          v-if="guess.length !== 0 && !canSubmit"
+          :results="filteredPaintings"
+          class="absolute w-full bottom-0 mb-2"
+          @selected="setGuess"
+        />
+      </div>
+      <input
+        v-model="guess"
+        type="text"
+        :placeholder="
+          canGuess
+            ? 'Search for artist / painting'
+            : 'Please select a tile to reveal'
+        "
+        :disabled="!canGuess"
+        class="
+          border-4 border-bluey
+          rounded-2xl
+          text-2xl
+          outline-none
+          w-full
+          px-4
+          py-3
+          flex-grow
+          text-gray-500
+        "
+        @keyup.enter="checkEnter"
+      />
+      <button
+        v-if="wrongGuess"
+        class="
+          rounded-2xl
+          text-2xl
+          outline-none
+          ml-4
+          px-4
+          py-4
+          text-white
+          bg-redd
+        "
+        @click="guessed"
+      >
+        Incorrect
+      </button>
+      <button
+        v-else
+        class="rounded-2xl text-2xl outline-none ml-4 px-4 py-4 text-white"
+        :class="canSubmit ? 'hover:bg-bluey-dark bg-bluey' : 'bg-bluey-light'"
+        @click="guessed"
+      >
+        Submit
+      </button>
+    </div>
   </div>
 </template>
 
@@ -72,6 +78,10 @@ export default {
     },
     wrongGuess: {
       type: Boolean,
+      required: true,
+    },
+    revealed: {
+      type: Array,
       required: true,
     },
   },

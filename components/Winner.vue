@@ -7,7 +7,8 @@
       <p>
         You successfully guessed today's Paintle with
         {{ guesses.length - 1 < 3 ? 'only' : '' }}
-        {{ guesses.length - 1 }} tile(s) revealed!
+        <span class="font-bold">{{ guesses.length - 1 }} tile(s)</span>
+        revealed!
       </p>
       <br />
       <p>Time until next Paintle: {{ secTillMidnightString }}</p>
@@ -79,7 +80,14 @@ export default {
   },
   methods: {
     copyResults() {
-      let text = 'Paintle.art [date]\n'
+      const options = {
+        year: '2-digit',
+        month: 'numeric',
+        day: 'numeric',
+      }
+      const now = new Date()
+      const dateString = now.toLocaleDateString('en-US', options)
+      let text = `Paintle.art ${dateString}\n`
       text += 'Revealed ' + (this.guesses.length - 1) + ' / 16 tiles\n\n'
       const unRevealedSquare = '⬜'
       const revealedSquare = '🟦'

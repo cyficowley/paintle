@@ -1,14 +1,10 @@
 <template>
   <div class="mx-auto bg-white">
     <div class="text-5xl text-gray-500 mx-auto pb-4">
-      <p>Quite the Aesthete!</p>
+      <p>Aw Shucks. Better Luck Next Time?</p>
     </div>
     <div class="text-2xl text-gray-400">
-      <p>
-        You successfully guessed today's Paintle with
-        {{ guesses.length - 1 < 3 ? 'only' : '' }}
-        {{ guesses.length - 1 }} tile(s) revealed!
-      </p>
+      <p>You unfortunately were unable to guess the correct answer :(</p>
       <br />
       <p>Time until next Paintle: {{ secTillMidnightString }}</p>
     </div>
@@ -34,12 +30,7 @@
 
 <script>
 export default {
-  props: {
-    guesses: {
-      type: Array,
-      required: true,
-    },
-  },
+  props: {},
   data() {
     return {
       secTillMidnight: 0,
@@ -80,16 +71,11 @@ export default {
   methods: {
     copyResults() {
       let text = 'Paintle.art [date]\n'
-      text += 'Revealed ' + (this.guesses.length - 1) + ' / 16 tiles\n\n'
-      const unRevealedSquare = '⬜'
+      text += 'Revealed x / 16 tiles\n\n'
       const revealedSquare = '🟦'
 
       for (let x = 0; x < 16; x++) {
-        if (this.guesses.includes(x)) {
-          text += revealedSquare
-        } else {
-          text += unRevealedSquare
-        }
+        text += revealedSquare
         if (x % 4 === 3) {
           text += '\n'
         }
