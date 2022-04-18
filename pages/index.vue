@@ -114,7 +114,9 @@ export default Vue.extend({
       }
     },
     handleReveal(revealLocation: number) {
-      this.revealed.push(revealLocation)
+      if (!this.revealed.includes(revealLocation)) {
+        this.revealed.push(revealLocation)
+      }
       this.canGuess = true
     },
     handleLoser() {

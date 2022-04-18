@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center">
-    <div class="my-4">
-      <p class="object-center">I Give Up {{ revealed.length }}</p>
+    <div v-if="revealed.length == 17" class="my-4">
+      <p class="object-center">I Give Up</p>
     </div>
     <div class="relative bg-white flex w-full">
       <!-- <p>guess is: {{ guess }}</p> -->
