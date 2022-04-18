@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import copy from 'copy-to-clipboard'
+
 export default {
   props: {
     guesses: {
@@ -104,7 +106,7 @@ export default {
         }
       }
 
-      navigator.clipboard.writeText(text)
+      copy(text)
     },
     secTillMidnightTimer() {
       if (this.secTillMidnight > 0) {

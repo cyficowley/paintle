@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import copy from 'copy-to-clipboard'
+
 export default {
   props: {
     answer: {
@@ -100,7 +102,7 @@ export default {
         }
       }
 
-      navigator.clipboard.writeText(text)
+      copy(text)
     },
     secTillMidnightTimer() {
       if (this.secTillMidnight > 0) {
