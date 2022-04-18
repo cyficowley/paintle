@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      revealed: '',
+      revealed: false,
     }
   },
   methods: {
