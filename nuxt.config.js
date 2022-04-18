@@ -44,4 +44,26 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  purgeCSS: {
+    whitelist: [
+      'bg-bluey',
+      'bg-bluey-dark',
+      'bg-bluey-light',
+      'bg-redd',
+      'bg-limey',
+      'bg-lime-super-dark',
+      'bg-limey-dark',
+      'bg-purpley',
+      'bg-purpley-dark',
+      'bg-reddy',
+      'bg-reddy-dark',
+      'bg-browny',
+      'bg-browny-dark',
+      'bg-goldy',
+      'bg-goldy-dark',
+      'bg-cyany',
+      'bg-cyany-dark',
+    ],
+  },
 }
