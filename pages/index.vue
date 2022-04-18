@@ -50,7 +50,7 @@ export default Vue.extend({
       possibleAnswers: [
         {
           artist: 'Johannes Vermeer',
-          name: 'Girl with a Peal Earring',
+          name: 'Girl with a Pearl Earring',
           path: '/paintings/girl.webp',
         },
         {
