@@ -47,7 +47,7 @@ export default {
   build: {},
 
   googleAnalytics: {
-    id: 'G-55B0QNDCNE',
+    id: 'UA-78529603-5',
   },
 
   purgeCSS: {
