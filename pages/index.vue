@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex flex-col overscroll-none">
+  <div class="flex flex-col h-screen overscroll-none">
     <Header
       class="mb-4"
       :won="won"
@@ -8,7 +8,7 @@
       @winner="winPopup = true"
       @loser="losePopup = true"
     />
-    <div class="container mx-auto flex-grow min-h-0">
+    <div class="container flex-grow min-h-0 mx-auto">
       <Painting
         :painting="selectedAnswer"
         :changeable="!won"
@@ -16,7 +16,7 @@
         @revealed="handleReveal"
       />
     </div>
-    <div class="container mx-auto grid grid-cols-12 px-2 gap-4 py-2 sm:py-4">
+    <div class="container grid grid-cols-12 gap-4 px-2 py-2 mx-auto sm:py-4">
       <Guesser
         :all-answers="possibleAnswers"
         :can-guess="canGuess && !won"
@@ -59,6 +59,16 @@ export default Vue.extend({
         path: '/paintings/persistence.webp',
       },
       {
+        artist: 'Jan Van Eyck',
+        name: 'The Arnolfini Portrait',
+        path: '/paintings/Arnolfini-portrait.webp',
+      },
+      {
+        artist: 'James McNeill Whistler',
+        name: "Whistler's Mother",
+        path: '/paintings/whistler-mother.webp',
+      },
+      {
         artist: 'Edvard Munch',
         name: 'The Scream',
         path: '/paintings/scream.webp',
@@ -72,11 +82,6 @@ export default Vue.extend({
         artist: 'Pablo Picaso',
         name: 'Guernica',
         path: '/paintings/guernica.webp',
-      },
-      {
-        artist: 'Jan Van Eyck',
-        name: 'The Arnolfini Portrait',
-        path: '/paintings/Arnolfini-portrait.webp',
       },
       {
         artist: 'Sandro Botticelli',
@@ -132,11 +137,6 @@ export default Vue.extend({
         artist: 'Eugène Delacroix',
         name: 'Liberty Leading the People',
         path: '/paintings/delacroix-liberty.webp',
-      },
-      {
-        artist: 'James McNeill Whistler',
-        name: "Whistler's Mother",
-        path: '/paintings/whistler-mother.webp',
       },
       {
         artist: 'Edouard Manet',
