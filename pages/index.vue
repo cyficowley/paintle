@@ -61,7 +61,7 @@ export default Vue.extend({
       {
         artist: 'Jan Van Eyck',
         name: 'The Arnolfini Portrait',
-        path: '/paintings/Arnolfini-portrait.webp',
+        path: '/paintings/arnolfini-portrait.webp',
       },
       {
         artist: 'James McNeill Whistler',
