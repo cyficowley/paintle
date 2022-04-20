@@ -3,7 +3,7 @@
     <!-- <p>guess is: {{ guess }}</p> -->
     <div class="absolute w-full top-0">
       <Results
-        v-if="guess.length !== 0 && !canSubmit"
+        v-if="guess.length > 2 && !canSubmit"
         :results="filteredPaintings"
         class="absolute w-full bottom-0 mb-2"
         @selected="setGuess"

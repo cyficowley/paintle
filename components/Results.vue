@@ -2,7 +2,7 @@
   <div class="border-4 border-bluey-dark rounded-2xl bg-white px-4 py-3">
     <div v-if="results.length !== 0">
       <p
-        v-for="result in results.slice(0, 6)"
+        v-for="result in results.slice(0, 5)"
         :key="result.name"
         class="text-lg sm:text-xl text-gray-500 hover:bg-limey"
         @click="emitValue(result)"

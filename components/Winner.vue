@@ -95,13 +95,14 @@ export default {
       const unRevealedSquare = '⬜'
       const revealedSquare = '🟦'
 
-      for (let x = 0; x < 16; x++) {
+      const size = 4
+      for (let x = 0; x < size * size; x++) {
         if (this.guesses.includes(x)) {
           text += revealedSquare
         } else {
           text += unRevealedSquare
         }
-        if (x % 4 === 3) {
+        if (x % size === size - 1) {
           text += '\n'
         }
       }
