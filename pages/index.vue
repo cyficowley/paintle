@@ -270,7 +270,7 @@ export default Vue.extend({
       },
     ]
 
-    const startDate = new Date(2022, 3, 17) // day that we wrote this code
+    const startDate = new Date(2022, 3, 19) // day that we wrote this code
     const now = new Date()
 
     // The days between the startDate and now
