@@ -244,7 +244,7 @@ export default Vue.extend({
         path: '/paintings/ermine.webp',
       },
       {
-        artist: 'Rembrandt',
+        artist: 'Rembrandt van Rijn',
         name: 'The Storm on the Sea of Galilee',
         path: '/paintings/galilee.webp',
       },
@@ -259,6 +259,11 @@ export default Vue.extend({
         path: '/paintings/irises.webp',
       },
       {
+        artist: 'Raphael',
+        name: 'The Transfiguration',
+        path: '/paintings/transfiguration.webp',
+      },
+      {
         artist: 'Katsushika Hokusai',
         name: 'The Great Wave Off Kanagawa',
         path: '/paintings/wave.webp',
@@ -267,6 +272,26 @@ export default Vue.extend({
         artist: 'Claude Monet',
         name: 'The Woman with a Parasol',
         path: '/paintings/parasol.webp',
+      },
+      {
+        artist: 'Raphael',
+        name: 'Self Portrait',
+        path: '/paintings/self.webp',
+      },
+      {
+        artist: 'Pierre-Auguste Renoir',
+        name: 'Luncheon of the Boating Party',
+        path: '/paintings/pierre.webp',
+      },
+      {
+        artist: 'Rembrandt van Rijn',
+        name: 'The Anatomy Lesson of Dr Nicolaes Tulp',
+        path: '/paintings/ew.webp',
+      },
+      {
+        artist: 'Jacques-Louis David',
+        name: 'Oath of the Horatii',
+        path: '/paintings/sword.webp',
       },
     ]
 
