@@ -193,6 +193,81 @@ export default Vue.extend({
         name: "The Treachery of Images (Ceci N'est Pas Une Pipe)",
         path: '/paintings/pipe.webp',
       },
+      {
+        artist: 'John William Waterhouse',
+        name: 'The Magic Cicle',
+        path: '/paintings/circle.webp',
+      },
+      {
+        artist: 'Pieter Bruegel the Elder',
+        name: 'The Tower Of Babel',
+        path: '/paintings/babs.webp',
+      },
+      {
+        artist: 'Vincent van Gogh',
+        name: 'Fishing boats on the Beach at Les Saintes-Maries-de-la-Mer',
+        path: '/paintings/boat.webp',
+      },
+      {
+        artist: 'Hans Andersen Brendekilde',
+        name: 'A wooded path in Autumn',
+        path: '/paintings/wood.webp',
+      },
+      {
+        artist: 'Francesco Paolo Hayez',
+        name: 'The Kiss',
+        path: '/paintings/the-kiss.webp',
+      },
+      {
+        artist: 'Jacques-Louis David',
+        name: 'Patroclus',
+        path: '/paintings/patroclus.webp',
+      },
+      {
+        artist: 'Leonardo Da Vinci',
+        name: 'The Last Supper',
+        path: '/paintings/supps.webp',
+      },
+      {
+        artist: 'Vincent van Gogh',
+        name: 'Café Terrace at Night',
+        path: '/paintings/cafe.webp',
+      },
+      {
+        artist: 'Claude Monet',
+        name: 'Impression, Sunrise',
+        path: '/paintings/impression.webp',
+      },
+      {
+        artist: 'Leonardo da Vinci',
+        name: 'Lady with an Ermine',
+        path: '/paintings/ermine.webp',
+      },
+      {
+        artist: 'Rembrandt',
+        name: 'The Storm on the Sea of Galilee',
+        path: '/paintings/galilee.webp',
+      },
+      {
+        artist: 'Caspar David Friedrich',
+        name: 'Wanderer above the Sea of Fog',
+        path: '/paintings/sea.webp',
+      },
+      {
+        artist: 'Vincent van Gogh',
+        name: 'Irises',
+        path: '/paintings/irises.webp',
+      },
+      {
+        artist: 'Katsushika Hokusai',
+        name: 'The Great Wave Off Kanagawa',
+        path: '/paintings/wave.webp',
+      },
+      {
+        artist: 'Claude Monet',
+        name: 'The Woman with a Parasol',
+        path: '/paintings/parasol.webp',
+      },
     ]
 
     const startDate = new Date(2022, 3, 17) // day that we wrote this code
