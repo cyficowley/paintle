@@ -216,7 +216,7 @@ export default Vue.extend({
       {
         artist: 'Francesco Paolo Hayez',
         name: 'The Kiss',
-        path: '/paintings/the-kiss.webp',
+        path: '/paintings/kiss.webp',
       },
       {
         artist: 'Jacques-Louis David',
