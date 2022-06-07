@@ -49,6 +49,15 @@ for index, row in paintings_data.iterrows():
         print('skipped bc no URL or no title: ' + name)
         continue
 
+    chars = [' ', ',', '-', '_', ':', '.', '(', ')']
+    temp_name = name
+    for char in chars:
+        temp_name = temp_name.replace(char, '')
+
+    if not temp_name.isalnum():
+        print('skipped bc no alpha: __' + name + '__')
+        continue
+
     artist_split = artist.split(', ')
     if len(artist_split) == 2:
         artist = artist_split[1] + ' ' + artist_split[0]
