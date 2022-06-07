@@ -1,11 +1,11 @@
 import pandas
 import json
 
-paintings_data = pandas.read_csv('get_paintings/tate-modified.csv')
+paintings_data = pandas.read_csv('tate-modified.csv')
 
 # get the list of mediums from txt file
 desired_mediums = []
-with open('get_paintings/mediums.txt', 'r') as f:
+with open('mediums.txt', 'r') as f:
     for line in f:
         desired_mediums.append(line.strip())
 
@@ -33,7 +33,7 @@ print(len(mediums))
 print(paintings_data.head())
 
 # make new DataFrame
-fitlered_paintings = pandas.DataFrame(columns=['painting_name', 'painting_title', 'img_url'])
+fitlered_paintings = pandas.DataFrame()
 
 urls = []
 artists = []
@@ -45,6 +45,10 @@ for index, row in paintings_data.iterrows():
     artist = row['artist.name']
     name = row['data.title']
 
+    if img_url is None:
+        print ('no image')
+    # print(artist)
+
     urls.append(img_url)
     artists.append(artist)
     names.append(name)
@@ -54,6 +58,10 @@ for index, row in paintings_data.iterrows():
     #     'name': name
     # }
 
+print(len(urls))
+print(len(artists))
+print(len(names))
+
 fitlered_paintings['img_url'] = urls
 fitlered_paintings['painting_artist'] = artists
 fitlered_paintings['painting_name'] = names
@@ -61,4 +69,6 @@ fitlered_paintings['painting_name'] = names
 print(fitlered_paintings.head())
 
 # write to CSV file
-fitlered_paintings.to_csv('get_paintings/fitlered_paintings.csv')
+fitlered_paintings.to_csv('fitlered_paintings.csv')
+
+print('CSV file written: filtered_paintings.csv')
