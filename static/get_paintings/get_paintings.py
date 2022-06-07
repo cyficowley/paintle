@@ -10,13 +10,13 @@ with open('mediums.txt', 'r') as f:
         desired_mediums.append(line.strip())
 
 mediums = paintings_data['data.medium'].unique()
-print(len(mediums))
+# print(len(mediums))
 
 # filter by dimension
 paintings_data = paintings_data[paintings_data['dimensions.depth'] == 0.0]
 
 mediums = paintings_data['data.medium'].unique()
-print(len(mediums))
+# print(len(mediums))
 
 # for m in mediums:
 #     print(m)
@@ -28,9 +28,9 @@ def filterFunc(x: str):
 paintings_data = paintings_data[paintings_data['data.medium'].apply(filterFunc)]
 
 mediums = paintings_data['data.medium'].unique()
-print(len(mediums))
+# print(len(mediums))
 
-print(paintings_data.head())
+# print(paintings_data.head())
 
 # make new DataFrame
 fitlered_paintings = pandas.DataFrame()
@@ -44,6 +44,16 @@ for index, row in paintings_data.iterrows():
     img_url = row['data.thumbnail']
     artist = row['artist.name']
     name = row['data.title']
+
+    if str(img_url) == 'nan' or name == '[no title]':
+        print('skipped bc no URL or no title: ' + name)
+        continue
+
+    artist_split = artist.split(', ')
+    if len(artist_split) == 2:
+        artist = artist_split[1] + ' ' + artist_split[0]
+    elif len(artist_split) == 3:
+        artist = artist_split[1] + ' ' + artist_split[0] + ' ' + artist_split[2]        
 
     urls.append(img_url)
     artists.append(artist)
