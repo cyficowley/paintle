@@ -45,7 +45,7 @@ for index, row in paintings_data.iterrows():
     artist = row['artist.name']
     name = row['data.title']
 
-    if str(img_url) == 'nan' or name == '[no title]':
+    if str(img_url) == 'nan' or name == '[no title]' or 'Untitled' in name or name == '[title not known]':
         print('skipped bc no URL or no title: ' + name)
         continue
 
