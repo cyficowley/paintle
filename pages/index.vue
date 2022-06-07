@@ -293,6 +293,11 @@ export default Vue.extend({
         name: 'Oath of the Horatii',
         path: '/paintings/sword.webp',
       },
+      {
+        artist: 'Pablo Picaso',
+        name: 'The Old Guitarist',
+        path: '/paintings/guitarist.webp',
+      },
     ]
 
     const startDate = new Date(2022, 3, 19) // day that we wrote this code
