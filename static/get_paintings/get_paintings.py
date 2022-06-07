@@ -45,22 +45,9 @@ for index, row in paintings_data.iterrows():
     artist = row['artist.name']
     name = row['data.title']
 
-    if img_url is None:
-        print ('no image')
-    # print(artist)
-
     urls.append(img_url)
     artists.append(artist)
     names.append(name)
-    # painting = {
-    #     'img_url': img_url,
-    #     'artist': artist,
-    #     'name': name
-    # }
-
-print(len(urls))
-print(len(artists))
-print(len(names))
 
 fitlered_paintings['img_url'] = urls
 fitlered_paintings['painting_artist'] = artists
@@ -71,4 +58,4 @@ print(fitlered_paintings.head())
 # write to CSV file
 fitlered_paintings.to_csv('fitlered_paintings.csv')
 
-print('CSV file written: filtered_paintings.csv')
+print('\nCSV file written: get_paintings/filtered_paintings.csv')
