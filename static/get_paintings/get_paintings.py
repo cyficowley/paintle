@@ -77,4 +77,4 @@ print(fitlered_paintings.head())
 # write to CSV file
 fitlered_paintings.to_csv('fitlered_paintings.csv')
 
-print('\nCSV file written: get_paintings/filtered_paintings.csv')
+print('\nCSV file written: get_paintings/fitlered_paintings.csv')
