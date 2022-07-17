@@ -1,204 +1,204 @@
 <script lang="ts">
-const possibleAnswers = [
-    {
-        name: "Adam Yates",
-        path: "/cycle_paintings/Adam_Yates.jpg",
-    },
-    {
-        name: "Beryl Burton",
-        path: "/cycle_paintings/Beryl_Burton.jpg",
-    },
-    {
-        name: "Egan Bernal",
-        path: "/cycle_paintings/EganBernal.jpg",
-    },
-    {
-        name: "Francois Pervis",
-        path: "/cycle_paintings/Francois_Pervis.JPG",
-    },
-    {
-        name: "Geraint Thomas",
-        path: "/cycle_paintings/Geraint_Thomas.jpg",
-    },
-    {
-        name: "Harrie Lavreysen",
-        path: "/cycle_paintings/Harrie_Lavreysen.jpg",
-    },
-    {
-        name: "Jeffrey Hoogland",
-        path: "/cycle_paintings/Jeffrey_Hoogland.jpg",
-    },
-    {
-        name: "Joao Almeida",
-        path: "/cycle_paintings/Joao_Almeida.jpg",
-    },
-    {
-        name: "Julian Alaphilippe",
-        path: "/cycle_paintings/Julian_Alaphilippe.JPG",
-    },
-    {
-        name: "Kristina Vogel",
-        path: "/cycle_paintings/Kristina_Vogel.jpg",
-    },
-    {
-        name: "Marco Pantani",
-        path: "/cycle_paintings/Marco_Pantani.jpg",
-    },
-    {
-        name: "Matthijs Buchli",
-        path: "/cycle_paintings/Matthijs_Buchli.jpg",
-    },
-    {
-        name: "Miriam Welte",
-        path: "/cycle_paintings/Miriam_Welte.jpg",
-    },
-    {
-        name: "Primoz Roglic",
-        path: "/cycle_paintings/Primoz_Roglic.jpg",
-    },
-    {
-        name: "Remco Evenepoel",
-        path: "/cycle_paintings/Remco_Evenepoel.jpg",
-    },
-    {
-        name: "Tadej Pogacar",
-        path: "/cycle_paintings/Tadej_Pogacar.jpg",
-    },
-    {
-        name: "Binard Hinault",
-        path: "/cycle_paintings/binard_hinault.jpg",
-    },
-    {
-        name: "Chris Froome",
-        path: "/cycle_paintings/chris_froome.jpg",
-    },
-    {
-        name: "Eddy Merckx",
-        path: "/cycle_paintings/eddy_merckx.jpg",
-    },
-    {
-        name: "Fausto Coppi",
-        path: "/cycle_paintings/fausto_coppi.jpg",
-    },
-    {
-        name: "Greg Lemond",
-        path: "/cycle_paintings/greg_lemond.jpg",
-    },
-    {
-        name: "Jens Voigt",
-        path: "/cycle_paintings/jens_voigt.jpg",
-    },
-    {
-        name: "Lance Armstrong",
-        path: "/cycle_paintings/lance_armstrong.jpg",
-    },
-    {
-        name: "Marianne Vos",
-        path: "/cycle_paintings/marianne_vos.jpg",
-    },
-    {
-        name: "Mario Cipollini",
-        path: "/cycle_paintings/mario_cipollini.jpg",
-    },
-    {
-        name: "Mark Cavendish",
-        path: "/cycle_paintings/mark_cavendish.jpg",
-    },
-    {
-        name: "Mathieu van der Poel",
-        path: "/cycle_paintings/mathieu_van_der_poel.jpg",
-    },
-    {
-        name: "Miguel Indurain",
-        path: "/cycle_paintings/miguel_indurain.jpg",
-    },
-    {
-        name: "Peter Sagan",
-        path: "/cycle_paintings/peter_sagan.jpg",
-    },
-    {
-        name: "Wout van Aert",
-        path: "/cycle_paintings/wout_van_aert.jpg",
-    },
-    {
-        name: "Adrien Niyonshuti",
-        path: "Adrien_Niyonshuti.JPG"
-    },
-    {
-        name: "Alberto Contador",
-        path: "Alberto_Contador.jpg"
-    },
-    {
-        name: "Andreas Kloden",
-        path: "Andreas_Kloden.jpg"
-    },
-    {
-        name: "Andy Schleck",
-        path: "Andy_Schleck.JPG"
-    },
-    {
-        name: "Fabian Cancellara",
-        path: "Fabian_Cancellara.jpg"
-    },
-    {
-        name: "Gregory Bauge",
-        path: "Gregory_Bauge.jpg"
-    },
-    {
-        name: "Ivan Basso",
-        path: "Ivan_Basso.jpg"
-    },
-    {
-        name: "Katheryn Curi",
-        path: "Katheryn_Curi.jpg"
-    },
-    {
-        name: "Lyne Bessette",
-        path: "Lyne_Bessette.jpg"
-    },
-    {
-        name: "Mark Beaumont",
-        path: "Mark_Beaumont.jpg"
-    },
-    {
-        name: "Michael Boogerd",
-        path: "Michael_Boogerd.jpg"
-    },
-    {
-        name: "Nicole Cooke",
-        path: "Nicole_Cooke.jpg"
-    },
-    {
-        name: "Paolo Bettini",
-        path: "Paolo_Bettini.jpg"
-    },
-    {
-        name: "Rigoberto Uran",
-        path: "Rigoberto_Uran.jpg"
-    },
-    {
-        name: "Santiago Botero",
-        path: "Santiago_Botero.jpg"
-    },
-    {
-        name: "Sara Carrigan",
-        path: "Sara_Carrigan.jpg"
-    },
-    {
-        name: "Stuart OGrady",
-        path: "Stuart_OGrady.jpg"
-    },
-    {
-        name: "Thor Hushovd",
-        path: "Thor_Hushovd.jpg"
-    },
-    {
-        name: "Tom Boonen",
-        path: "Tom_Boonen.JPG"
-    },
-    {
-        name: "Tom Danielson",
-        path: "Tom_Danielson.jpg"
-    },
+const possibleAnswersCycle = [
+  {
+    name: 'Adam Yates',
+    path: '/cycle_paintings/Adam_Yates.jpg',
+  },
+  {
+    name: 'Beryl Burton',
+    path: '/cycle_paintings/Beryl_Burton.jpg',
+  },
+  {
+    name: 'Egan Bernal',
+    path: '/cycle_paintings/EganBernal.jpg',
+  },
+  {
+    name: 'Francois Pervis',
+    path: '/cycle_paintings/Francois_Pervis.JPG',
+  },
+  {
+    name: 'Geraint Thomas',
+    path: '/cycle_paintings/Geraint_Thomas.jpg',
+  },
+  {
+    name: 'Harrie Lavreysen',
+    path: '/cycle_paintings/Harrie_Lavreysen.jpg',
+  },
+  {
+    name: 'Jeffrey Hoogland',
+    path: '/cycle_paintings/Jeffrey_Hoogland.jpg',
+  },
+  {
+    name: 'Joao Almeida',
+    path: '/cycle_paintings/Joao_Almeida.jpg',
+  },
+  {
+    name: 'Julian Alaphilippe',
+    path: '/cycle_paintings/Julian_Alaphilippe.JPG',
+  },
+  {
+    name: 'Kristina Vogel',
+    path: '/cycle_paintings/Kristina_Vogel.jpg',
+  },
+  {
+    name: 'Marco Pantani',
+    path: '/cycle_paintings/Marco_Pantani.jpg',
+  },
+  {
+    name: 'Matthijs Buchli',
+    path: '/cycle_paintings/Matthijs_Buchli.jpg',
+  },
+  {
+    name: 'Miriam Welte',
+    path: '/cycle_paintings/Miriam_Welte.jpg',
+  },
+  {
+    name: 'Primoz Roglic',
+    path: '/cycle_paintings/Primoz_Roglic.jpg',
+  },
+  {
+    name: 'Remco Evenepoel',
+    path: '/cycle_paintings/Remco_Evenepoel.jpg',
+  },
+  {
+    name: 'Tadej Pogacar',
+    path: '/cycle_paintings/Tadej_Pogacar.jpg',
+  },
+  {
+    name: 'Binard Hinault',
+    path: '/cycle_paintings/binard_hinault.jpg',
+  },
+  {
+    name: 'Chris Froome',
+    path: '/cycle_paintings/chris_froome.jpg',
+  },
+  {
+    name: 'Eddy Merckx',
+    path: '/cycle_paintings/eddy_merckx.jpg',
+  },
+  {
+    name: 'Fausto Coppi',
+    path: '/cycle_paintings/fausto_coppi.jpg',
+  },
+  {
+    name: 'Greg Lemond',
+    path: '/cycle_paintings/greg_lemond.jpg',
+  },
+  {
+    name: 'Jens Voigt',
+    path: '/cycle_paintings/jens_voigt.jpg',
+  },
+  {
+    name: 'Lance Armstrong',
+    path: '/cycle_paintings/lance_armstrong.jpg',
+  },
+  {
+    name: 'Marianne Vos',
+    path: '/cycle_paintings/marianne_vos.jpg',
+  },
+  {
+    name: 'Mario Cipollini',
+    path: '/cycle_paintings/mario_cipollini.jpg',
+  },
+  {
+    name: 'Mark Cavendish',
+    path: '/cycle_paintings/mark_cavendish.jpg',
+  },
+  {
+    name: 'Mathieu van der Poel',
+    path: '/cycle_paintings/mathieu_van_der_poel.jpg',
+  },
+  {
+    name: 'Miguel Indurain',
+    path: '/cycle_paintings/miguel_indurain.jpg',
+  },
+  {
+    name: 'Peter Sagan',
+    path: '/cycle_paintings/peter_sagan.jpg',
+  },
+  {
+    name: 'Wout van Aert',
+    path: '/cycle_paintings/wout_van_aert.jpg',
+  },
+  {
+    name: 'Adrien Niyonshuti',
+    path: 'Adrien_Niyonshuti.JPG',
+  },
+  {
+    name: 'Alberto Contador',
+    path: 'Alberto_Contador.jpg',
+  },
+  {
+    name: 'Andreas Kloden',
+    path: 'Andreas_Kloden.jpg',
+  },
+  {
+    name: 'Andy Schleck',
+    path: 'Andy_Schleck.JPG',
+  },
+  {
+    name: 'Fabian Cancellara',
+    path: 'Fabian_Cancellara.jpg',
+  },
+  {
+    name: 'Gregory Bauge',
+    path: 'Gregory_Bauge.jpg',
+  },
+  {
+    name: 'Ivan Basso',
+    path: 'Ivan_Basso.jpg',
+  },
+  {
+    name: 'Katheryn Curi',
+    path: 'Katheryn_Curi.jpg',
+  },
+  {
+    name: 'Lyne Bessette',
+    path: 'Lyne_Bessette.jpg',
+  },
+  {
+    name: 'Mark Beaumont',
+    path: 'Mark_Beaumont.jpg',
+  },
+  {
+    name: 'Michael Boogerd',
+    path: 'Michael_Boogerd.jpg',
+  },
+  {
+    name: 'Nicole Cooke',
+    path: 'Nicole_Cooke.jpg',
+  },
+  {
+    name: 'Paolo Bettini',
+    path: 'Paolo_Bettini.jpg',
+  },
+  {
+    name: 'Rigoberto Uran',
+    path: 'Rigoberto_Uran.jpg',
+  },
+  {
+    name: 'Santiago Botero',
+    path: 'Santiago_Botero.jpg',
+  },
+  {
+    name: 'Sara Carrigan',
+    path: 'Sara_Carrigan.jpg',
+  },
+  {
+    name: 'Stuart OGrady',
+    path: 'Stuart_OGrady.jpg',
+  },
+  {
+    name: 'Thor Hushovd',
+    path: 'Thor_Hushovd.jpg',
+  },
+  {
+    name: 'Tom Boonen',
+    path: 'Tom_Boonen.JPG',
+  },
+  {
+    name: 'Tom Danielson',
+    path: 'Tom_Danielson.jpg',
+  },
 ]
 </script>

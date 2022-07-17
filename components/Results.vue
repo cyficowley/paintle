@@ -1,17 +1,18 @@
 <template>
-  <div class="border-4 border-bluey-dark rounded-2xl bg-white px-4 py-3">
+  <div class="px-4 py-3 bg-white border-4 border-bluey-dark rounded-2xl">
     <div v-if="results.length !== 0">
       <p
         v-for="result in results.slice(0, 5)"
         :key="result.name"
-        class="text-lg sm:text-xl text-gray-500 hover:bg-limey"
+        class="text-lg text-gray-500 sm:text-xl hover:bg-limey"
         @click="emitValue(result)"
       >
-        <span class="font-bold">{{ result.name }}</span> - {{ result.artist }}
+        <span class="font-bold">{{ result.name }}</span
+        ><span v-if="hasArtist"> - {{ result.artist }}</span>
       </p>
     </div>
     <div v-else>
-      <p class="text-lg sm:text-xl text-gray-500">No results found</p>
+      <p class="text-lg text-gray-500 sm:text-xl">No results found</p>
     </div>
   </div>
 </template>
@@ -24,6 +25,10 @@ export default {
     results: {
       type: Array,
       required: true,
+    },
+    hasArtist: {
+      type: Boolean,
+      default: true,
     },
   },
   methods: {

@@ -1,32 +1,22 @@
 <template>
   <div class="mx-auto bg-white">
-    <div class="text-2xl sm:text-5xl text-gray-500 mx-auto pb-4">
+    <div class="pb-4 mx-auto text-2xl text-gray-500 sm:text-5xl">
       <p>Quite the Cyclist Connoisseur!</p>
     </div>
-    <div class="text-lg sm:text-2xl text-gray-400">
+    <div class="text-lg text-gray-400 sm:text-2xl">
       <p>
-        You successfully guessed today's Cycle with
-        {{ guesses.length - 1 < 3 ? 'only' : '' }} <span class="font-bold">{{
-            guesses.length - 1
-        }} tile(s)</span>
-          revealed!
+        You successfully this Cycle with
+        {{ guesses.length - 1 < 3 ? 'only' : '' }}
+        <span class="font-bold">{{ guesses.length - 1 }} tile(s)</span>
+        revealed!
       </p>
       <br />
-      <p>Time until next Cycle: {{ secTillMidnightString }}</p>
+      <p>Reload for the next cycle</p>
     </div>
-    <button class="
-        mt-4
-        px-4
-        text-lg
-        sm:text-2xl
-        py-2
-        border border-transparent
-        rounded-md
-        shadow-sm
-        text-white
-        bg-limey-dark
-        hover:bg-limey
-      " @click="copyResults">
+    <button
+      class="px-4 py-2 mt-4 text-lg text-white border border-transparent rounded-md shadow-sm  sm:text-2xl bg-limey-dark hover:bg-limey"
+      @click="copyResults"
+    >
       Copy results
     </button>
   </div>
@@ -88,7 +78,7 @@ export default {
       }
       const now = new Date()
       const dateString = now.toLocaleDateString('en-US', options)
-      let text = `www.paintle.art ${dateString}\n`
+      let text = `www.paintle.art/cycle ${dateString}\n`
       text += 'Revealed ' + (this.guesses.length - 1) + ' / 16 tiles\n\n'
       const unRevealedSquare = '⬜'
       const revealedSquare = '🟦'
